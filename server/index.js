@@ -10,6 +10,10 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
+//data imports
+// import User from "./models/User.js";
+// import { dataUser } from "./data/index.js";
+
 // Configuration
 dotenv.config();
 
@@ -30,13 +34,16 @@ app.use("management", managementRoutes);
 app.use("sales", salesRoutes);
 
 // MONGOOSE SETUP
+const PORT = process.env.PORT || 9000;
 mongoose
   .connect(process.env.MONGO_URL)
-  .then(() => console.log("MongoDB Connected"))
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server started on port:${PORT}`);
+      // User.insertMany(dataUser);
+    });
+    console.log("MongoDB Connected");
+  })
   .catch((err) => console.log(err));
 
 //SERVER
-const PORT = process.env.PORT || 9000;
-app.listen(PORT, () => {
-  console.log("Server started on port 5001");
-});
