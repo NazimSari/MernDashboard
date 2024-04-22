@@ -209,7 +209,7 @@ const Sidebar = ({
                   fontSize="0.8rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
-                  {user.city}
+                  {user.occupation}
                 </Typography>
               </Box>
               <SettingsOutlined

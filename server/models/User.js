@@ -19,20 +19,19 @@ const userSchema = new mongoose.Schema(
       required: true,
       min: 5,
     },
-    city: {
+    city: String,
+    state: String,
+    country: String,
+    occupation: String,
+    phoneNumber: String,
+    transactions: Array,
+    role: {
       type: String,
-      state: String,
-      country: String,
-      occupation: String,
-      phoneNumber: String,
-      transactions: Array,
-      role: {
-        type: String,
-        enum: ["user", "admin", "superadmin"],
-        default: "admin",
-      },
+      enum: ["user", "admin", "superadmin"],
+      default: "admin",
     },
   },
+
   { timestamps: true }
 );
 
