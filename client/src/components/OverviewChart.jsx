@@ -16,7 +16,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       color: theme.palette.secondary.main,
       data: [],
     };
-    const totoalUnitsLine = {
+    const totalUnitsLine = {
       id: "totalUnits",
       color: theme.palette.secondary[600],
       data: [],
@@ -29,15 +29,15 @@ const OverviewChart = ({ isDashboard = false, view }) => {
           ...totalSalesLine.data,
           { x: month, y: curSales },
         ];
-        totoalUnitsLine.data = [
-          ...totoalUnitsLine.data,
+        totalUnitsLine.data = [
+          ...totalUnitsLine.data,
           { x: month, y: curUnits },
         ];
         return { sales: curSales, units: curUnits };
       },
       { sales: 0, units: 0 }
     );
-    return [[totalSalesLine], [totoalUnitsLine]];
+    return [[totalSalesLine], [totalUnitsLine]];
   }, [data]);
   if (!data || isLoading) return "Loading...";
 

@@ -67,7 +67,7 @@ const navItems = [
     icon: <PointOfSaleOutlined />,
   },
   {
-    text: "Daily Reports",
+    text: "Daily",
     icon: <TodayOutlined />,
   },
   {
