@@ -105,6 +105,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       }}
       axisLeft={{
         tickSize: 5,
+        tickValues: 5,
         tickPadding: 5,
         tickRotation: 0,
         legend: isDashboard
@@ -117,6 +118,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       enableGridX={false}
       enableGridY={false}
       pointSize={10}
+      enableArea={true}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}
       pointBorderColor={{ from: "serieColor" }}
